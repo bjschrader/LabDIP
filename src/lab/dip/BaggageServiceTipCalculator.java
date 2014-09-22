@@ -4,7 +4,7 @@ package lab.dip;
  *
  * @author schra_000
  */
-public class BaggageServiceTipCalculator {
+public class BaggageServiceTipCalculator implements TipCalculator {
 
     private static final double MIN_BILL = 0.00;
     private static final double MAX_BILL = 100.00;
@@ -31,7 +31,8 @@ public class BaggageServiceTipCalculator {
         baseTipPerBag = 1.00; // set default value
     }
 
-    public double getTipForBaggeHandler() {
+    @Override
+    public double getCalculatedTip() {
         double tip = 0.00; // always initialize local variables
 
         switch (serviceQuality) {

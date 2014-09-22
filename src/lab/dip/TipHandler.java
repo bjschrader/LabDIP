@@ -11,4 +11,20 @@ package lab.dip;
  */
 public class TipHandler {
     
+    private TipCalculator tipCalculator;
+
+    public TipHandler(TipCalculator tip) {
+        this.tipCalculator = tipCalculator;
+    }
+
+    public double getTip (){
+       return tipCalculator.getCalculatedTip();
+    }
+    
+    public void setTip(TipCalculator tip) {
+        this.tipCalculator = tipCalculator;
+    }
+    
+    
+    
 }
