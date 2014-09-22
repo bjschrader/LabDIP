@@ -5,10 +5,11 @@ package lab.dip;
  * @author schra_000
  */
 public class BaggageServiceTipCalculator {
+
     private static final double MIN_BILL = 0.00;
     private static final double MAX_BILL = 100.00;
-    private static final String BILL_ENTRY_ERR =
-            "Error: bill must be between " + MIN_BILL + " and "
+    private static final String BILL_ENTRY_ERR
+            = "Error: bill must be between " + MIN_BILL + " and "
             + MAX_BILL;
     private static final double GOOD_RATE = 0.20;
     private static final double FAIR_RATE = 0.15;
@@ -16,7 +17,11 @@ public class BaggageServiceTipCalculator {
 
     private double baseTipPerBag;
     private int bagCount;
-    
+
+//    public enum ServiceQuality {
+//
+//        GOOD, FAIR, POOR
+//    }
     private ServiceQuality serviceQuality;
 
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
@@ -29,7 +34,7 @@ public class BaggageServiceTipCalculator {
     public double getTipForBaggeHandler() {
         double tip = 0.00; // always initialize local variables
 
-        switch(serviceQuality) {
+        switch (serviceQuality) {
             case GOOD:
                 tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
                 break;
@@ -58,7 +63,7 @@ public class BaggageServiceTipCalculator {
     }
 
     public final void setBagCount(int bagCount) {
-        if(bagCount < 0) {
+        if (bagCount < 0) {
             throw new IllegalArgumentException(
                     "bag count must be greater than or equal to zero");
         }
@@ -70,7 +75,7 @@ public class BaggageServiceTipCalculator {
     }
 
     public void setBaseTipPerBag(double baseTipPerBag) {
-        if(baseTipPerBag < 0) {
+        if (baseTipPerBag < 0) {
             throw new IllegalArgumentException(
                     "error: base tip must be greater than or equal to zero");
         }
